@@ -1,0 +1,38 @@
+class XyResponse<T>{
+    constructor(public data :T,
+                public status :boolean){
+                }
+}
+
+class XyRequest<T>{
+    constructor(public data :T){
+                }
+}
+
+interface XyResponseCallBack<T> {
+    (response : XyResponse<T>) : void;
+}
+
+class XyAsyncSimulation{
+  public sendAsyncResquest(request : XyRequest<string> ,
+                           callback : XyResponseCallBack<string>){
+     let response :XyResponse<string> = new XyResponse(
+       "** response to " + request.data + "**", true);
+       //appel en differe apres 2000 ms:
+      //setTimeout(callback(response),2000); //bug contextuel
+     /*
+     // simulation traitement long:
+      for(let i=0;i<125000000;i++){
+          let x= Math.sqrt(1.0*i);
+      }*/
+      //appel immediat ou apres traitement long (tp simple):
+      callback(response);
+     }
+}
+
+//test:
+var xyAsync = new XyAsyncSimulation();
+var req = new XyRequest("abc");
+xyAsync.sendAsyncResquest(req,
+    (resp)=>{ console.log("data= " + resp.data); }
+)

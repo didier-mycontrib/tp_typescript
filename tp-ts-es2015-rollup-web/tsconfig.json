@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "declaration": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "es2015", "dom"],
+    "sourceMap": true,
+    "pretty": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "dist/out-tsc",
+    "rootDir" : "src",
+    "typeRoots": [
+        ],
+    "types": [
+    ]
+  },
+  "files": [
+            "src/svg-fig.ts"
+        ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src"
+  ],
+  "compileOnSave": true
+}
