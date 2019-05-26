@@ -2,19 +2,16 @@
 "compileOnSave": true,
 "compilerOptions": {
     "baseUrl": "",
+    "lib": ["es2015", "dom"], 
     "declaration": false,
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
-//    "module": "es2015",
-	"module": "commonjs",
-    "moduleResolution": "node",
     "outDir": "dist/out-tsc",
     "sourceMap": true,
     "target": "es5",
     "noEmitOnError" : false
   },
   "include": [
-//		"src_version_require_common_js/**/*"
        "src/**/*"
    ],
    "exclude": [

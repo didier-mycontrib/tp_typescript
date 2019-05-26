@@ -1,0 +1,27 @@
+<html>
+    <script src="lib/js/my-iife-js-lib.js"></script>
+    <script src="lib/js/my-any-js-lib.js"></script>
+    <script src="dist/essai-specific-ambient.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+        document.querySelector('#btnDiv').addEventListener('click',function(){
+           var x= Number(document.querySelector('#x').value);
+           var y= Number(document.querySelector('#y').value);
+           document.querySelector('#resultat1').innerHTML
+                =div_delegating_to_js_lib(x,y);
+            document.querySelector('#resultat2').innerHTML
+                =carre_delegating_to_js_lib(x);
+            document.querySelector('#msg').innerHTML
+                =message_delegating_to_js_lib(x);
+        });
+    });
+    </script>
+<body>
+    x:<input value="6" id="x" /> <br/>
+    y:<input value="2" id="y" /> <br/>
+    <input type="button" value="action division" id="btnDiv" /> <br/>
+    res division(x,y): <span id="resultat1" ></span> <br/>
+    res carre(x): <span id="resultat2" ></span> <br/>   
+    message: <span id="msg" ></span> 
+</body>    
+</html>

@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    //  "url": "http://localhost/mypage.html",
+   // "webRoot": "${workspaceFolder}/wwwroot"
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch localhost",
+            "type": "chrome",
+            "request": "launch",
+            "url": "file:///D:/tp/local-git-mycontrib-repositories/tp_typescript/bases-typescript-web/dist/web/simple.html",
+            "webRoot": "${workspaceFolder}/dist/web"
+        },
+        {
+            "name": "Launch index.html (disable sourcemaps)",
+            "type": "chrome",
+            "request": "launch",
+            "sourceMaps": false,
+            "file": "${workspaceFolder}/index.html"
+        },
+    ]
+}

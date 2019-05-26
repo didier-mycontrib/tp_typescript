@@ -2,8 +2,9 @@
 import { Fig2D , Line, Circle, Rectangle } from './fig' ;
 import { SvgInCanvasVisitor } from './canvas-visitor' ;
 
-
-function my_ts_test(){
+//seen outside/iife/js/html as modulename.my_ts_test();
+// myapp.my_ts_test(); if modulename=output/name=myapp in rollup.config.js
+export function my_ts_test(){
     var tabFig : Fig2D[] = new Array<Fig2D>();
     tabFig.push(new Line(20,20,180,200,"red"));
     tabFig.push(new Circle(100,100,50,"blue"));
@@ -22,4 +23,6 @@ function my_ts_test(){
 
 }
 
-export default my_ts_test;
+
+export default my_ts_test; // for rollup needs (entry point)
+

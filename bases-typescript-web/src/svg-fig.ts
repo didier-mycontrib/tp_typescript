@@ -54,7 +54,7 @@ interface FigVisitor {
   doActionForRectangle(r : Rectangle) : void;
 }
 
-class SvgInCanvasVisitor  implements FigVisitor{
+class CanvasVisitor  implements FigVisitor{
   private _canvasElement : any = null;
   private _ctx : any = null; //2d (svg) context in html5 canvas
   constructor(public canvasId : string){
@@ -70,7 +70,6 @@ class SvgInCanvasVisitor  implements FigVisitor{
        }
      this._ctx.lineWidth = c.lineWidth;
      this._ctx.strokeStyle =  c.lineColor;//'#003300';
-     this._ctx.closePath();
      this._ctx.stroke();
   }
   doActionForLine( l : Line) : void {
@@ -79,7 +78,6 @@ class SvgInCanvasVisitor  implements FigVisitor{
     this._ctx.lineTo(l.x2,l.y2);
     this._ctx.strokeStyle =  l.lineColor;
     this._ctx.lineWidth = l.lineWidth;
-    this._ctx.closePath();
     this._ctx.stroke();
   }
 
@@ -92,7 +90,6 @@ class SvgInCanvasVisitor  implements FigVisitor{
        }
     this._ctx.strokeStyle =  r.lineColor;
     this._ctx.lineWidth = r.lineWidth;
-    this._ctx.closePath();
     this._ctx.stroke();
   }
 }
@@ -104,7 +101,7 @@ function my_ts_test(){
     tabFig.push(new Circle(250,200,50,"black",1,"blue"));
     tabFig.push(new Rectangle(200,100,50,60,"green"));
     tabFig.push(new Rectangle(20,100,50,60,"black",1,"green"));
-    var svgVisitor = new SvgInCanvasVisitor("myCanvas");
+    var svgVisitor = new CanvasVisitor("myCanvas"); 
     //for(let index in tabFig) { ... }
     for( let f  of tabFig){
       f.performVisit(svgVisitor);

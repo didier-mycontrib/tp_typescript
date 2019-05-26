@@ -1,0 +1,14 @@
+{
+  "name": "bases-typescript",
+  "version": "1.0.0",
+  "description": "tp typescript",
+  "main": "dist/out-tsc/hello-world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ts"
+  ],
+  "author": "didier defrance",
+  "license": "ISC"
+}

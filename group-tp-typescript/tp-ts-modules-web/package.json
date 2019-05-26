@@ -1,0 +1,16 @@
+{
+  "name": "tp-ts-modules-web",
+  "version": "1.0.0",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "rollup-to-es2015" : "rollup -c rollup.config.js",
+    "es2015-to-es5" : "tsc --out ./dist/build-es5/app-bundle.js --target es5 --allowJs dist/build-es2015/app-bundle.js",
+    "build" : "tsc && rollup -c rollup.config.js && tsc --out ./dist/build-es5/app-bundle.js --target es5 --allowJs dist/build-es2015/app-bundle.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+     "typescript": "^2.3.1"
+  }
+}

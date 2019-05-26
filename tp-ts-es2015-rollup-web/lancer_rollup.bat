@@ -1,3 +1,4 @@
+cd /d "%~dp0"
 REM npm run rollup-to-es2015
-rollup -c rollup.config.js
+rollup --config ./rollup.config.js
 pause

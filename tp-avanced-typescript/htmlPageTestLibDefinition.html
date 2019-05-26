@@ -1,0 +1,22 @@
+<html>
+    <script src="lib/js/my-js-lib.js"></script>
+    <script src="dist/essai-classical-ambient.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+        document.querySelector('#btnAdd').addEventListener('click',function(){
+           var x= Number(document.querySelector('#x').value);
+           var y= Number(document.querySelector('#y').value);
+           document.querySelector('#resultat').innerHTML
+                =add_delegating_to_js_lib(x,y);
+               //= add_js_lib(x,y);
+        });
+    });
+    </script>
+<body>
+    x:<input value="2" id="x" /> <br/>
+    y:<input value="3" id="y" /> <br/>
+    <input type="button" value="action addition" id="btnAdd" /> <br/>
+    res: <span id="resultat" ></span> <br/>
+    ... 
+</body>    
+</html>
