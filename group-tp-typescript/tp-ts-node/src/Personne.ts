@@ -21,8 +21,8 @@ console.log("nom de p1 :" + p1.nom);
 console.log("numero de p1 :" + p1.numero);
 
 class Employe extends Personne{
-  constructor(public numero : number =0,
-              public nom : string ="?",
+  constructor(numero : number =0,
+              nom : string ="?",
               public salaire : number = 0){
           super(numero,nom);    
     }

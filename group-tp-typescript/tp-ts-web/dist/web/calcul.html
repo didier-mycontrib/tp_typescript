@@ -1,0 +1,23 @@
+<html>
+<head>
+ <title>calcul</title>
+ <script src="../out-tsc/calculs.js"></script>
+ <script>
+     window.addEventListener("load", function(){
+		document.querySelector('#btnAdd').addEventListener('click',
+		     function(){
+				var valA=Number(document.querySelector('#a').value);
+				var valB=Number(document.querySelector('#b').value);
+				var valRes=addition(valA,valB);
+				document.querySelector('#res').innerHTML=valRes;
+				});
+	});
+ </script>
+</head>
+<body>
+a:<input id="a" /> <br/>
+b:<input id="b" /> <br/>
+<input type="button" value="addition" id="btnAdd"/><br/>
+res: <span id="res"></span> <br/>
+</body>
+</html>

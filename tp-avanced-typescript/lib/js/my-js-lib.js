@@ -18,6 +18,33 @@ stats1=[{"label":"statX unite=cm","sum":15,"average":5},
         {"label":"statY unite=cm","sum":21,"average":7}]
 */
 
+function Circle(cx,cy,r){
+	this.cx=cx;
+	this.cy=cy;
+	this.r=r;
+	this.perimetre = function(){
+		return Math.PI * 2 * this.r;
+	}
+	this.translate=function(dx,dy){
+		this.cx = this.cx+ dx;
+		this.cy = this.cy + dy;
+	}
+}
+
+function calculerSurfaceCercle(c){
+	return  Math.PI * c.r * c.r;
+}
+
+function Line(x1,x2,y1,y2){
+	this.x1=x1;
+	this.y1=y1;
+	this.x2=x2;
+	this.y2=y2;
+	this.length = function(){
+		return Math.sqrt( Math.pow(this.x2 - this.x1,2) + Math.pow(this.y2 - this.y1,2) ) ;
+	}
+}
+
 function buildStats(entries){
    var sx=0,ax=0,n=0,sy=0,ay=0;
    var withY=false;

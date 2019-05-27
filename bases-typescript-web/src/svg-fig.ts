@@ -54,6 +54,21 @@ interface FigVisitor {
   doActionForRectangle(r : Rectangle) : void;
 }
 
+class ConsoleJsonVisitor  implements FigVisitor{
+
+  doActionForCircle(c: Circle): void {
+    console.log("{circle: " + JSON.stringify(c) +"}");
+  }  
+  
+  doActionForLine(l: Line): void {
+    console.log("{line: " + JSON.stringify(l) +"}"); 
+  }
+  doActionForRectangle(r: Rectangle): void {
+    console.log("{rectangle:" + JSON.stringify(r) +"}");
+  }
+
+}
+
 class CanvasVisitor  implements FigVisitor{
   private _canvasElement : any = null;
   private _ctx : any = null; //2d (svg) context in html5 canvas
@@ -101,9 +116,15 @@ function my_ts_test(){
     tabFig.push(new Circle(250,200,50,"black",1,"blue"));
     tabFig.push(new Rectangle(200,100,50,60,"green"));
     tabFig.push(new Rectangle(20,100,50,60,"black",1,"green"));
-    var svgVisitor = new CanvasVisitor("myCanvas"); 
+
+    var consoleVisitor = new ConsoleJsonVisitor();
+    for( let f  of tabFig){
+      f.performVisit(consoleVisitor);
+    }
+
+    var canvasVisitor = new CanvasVisitor("myCanvas"); 
     //for(let index in tabFig) { ... }
     for( let f  of tabFig){
-      f.performVisit(svgVisitor);
+      f.performVisit(canvasVisitor);
     }
 }
