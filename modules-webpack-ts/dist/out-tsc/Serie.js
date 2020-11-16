@@ -1,4 +1,5 @@
-export class Serie {
+"use strict";
+/*export*/ class Serie {
     constructor(label = "?", values = []) {
         this.label = label;
         this.values = values;

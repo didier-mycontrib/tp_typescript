@@ -1,7 +1,9 @@
-import { Serie } from "./Serie";
-import { MySimpleGraph } from "./MyGraph";
-import { log_essai_Circle } from "./test-my-js-lib";
-
+/*
+import { Serie } from './Serie';
+import { MySimpleGraph } from './MyGraph';
+*/
+ 
+ 
  window.addEventListener("load", function(){
 
 
@@ -26,8 +28,6 @@ import { log_essai_Circle } from "./test-my-js-lib";
 		let myGraph = new MySimpleGraph("myCanvas",sVal , sLabel);
 		myGraph.setTypeChartAsString(strTypeChart);
 		myGraph.render();
-
-		log_essai_Circle();
 	 });
 
 

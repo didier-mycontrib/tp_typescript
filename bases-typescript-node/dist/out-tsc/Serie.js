@@ -2,7 +2,7 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -69,22 +69,22 @@ var StatSerie = /** @class */ (function (_super) {
     }
     Object.defineProperty(StatSerie.prototype, "size", {
         get: function () { return this.statComputer.size(); },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(StatSerie.prototype, "average", {
         get: function () { return this.statComputer.average(); },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(StatSerie.prototype, "sum", {
         get: function () { return this.statComputer.sum(); },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(StatSerie.prototype, "ecartType", {
         get: function () { return this.statComputer.ecartType(); },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     StatSerie.prototype.buildStat = function (withEcartType) {

@@ -1,7 +1,5 @@
-import { Serie } from "./Serie";
-
-
-
+import { Serie } from './Serie';
+ 
 declare function Chart(...args:any):void;
 
 const NB_DEFAULT_COLORS=6;

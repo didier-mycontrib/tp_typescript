@@ -1,11 +1,11 @@
 
-interface Stat{
+ interface Stat{
     size:number;
     average:number;
     sum:number;
     ecartType? :number;
 }
-
+/*
 interface StatBuilder {
     buildStat(withEcartType:boolean):Stat;
 }
@@ -15,9 +15,9 @@ interface WithStats extends StatBuilder {
      average():number;
      sum():number;
      ecartType():number;
-}
+}*/
 
-class StatComputer implements WithStats {
+class StatComputer /*implements WithStats*/ {
 
     constructor(public values : Array<number>=[]){
     }
@@ -56,10 +56,7 @@ class StatComputer implements WithStats {
     }
 }
 
-let myValues=[8, 2 ,6, 4 , 10];
-let myStatComputer=new StatComputer(myValues);
-console.log("size="+myStatComputer.size());  
-console.log("sum="+myStatComputer.sum());  
-console.log("average="+myStatComputer.average());  
-console.log("ecartType="+myStatComputer.ecartType());
-console.log("myStatComputer.buildStat()="+JSON.stringify(myStatComputer.buildStat(true)));
+ function buildStatFromValues(values: Array<number>) : Stat{
+    let internatStatComputer=new StatComputer(values);
+    return internatStatComputer.buildStat();
+}

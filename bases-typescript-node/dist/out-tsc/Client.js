@@ -14,7 +14,7 @@ var Client = /** @class */ (function () {
             else
                 console.log("age negatif interdit");
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     return Client;

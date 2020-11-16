@@ -1,3 +1,5 @@
+"use strict";
+/*import { Serie } from './Serie';*/
 const NB_DEFAULT_COLORS = 6;
 var MyGraphType;
 (function (MyGraphType) {
@@ -26,7 +28,7 @@ var myGraphDefaultBorderColors = [
     'rgba(153, 102, 255, 1)',
     'rgba(255, 159, 64, 1)'
 ];
-export class MySimpleGraph {
+/* export*/ class MySimpleGraph {
     constructor(idCanvasElement, dataSerie, labelSerie) {
         this.idCanvasElement = idCanvasElement;
         this.dataSerie = dataSerie;

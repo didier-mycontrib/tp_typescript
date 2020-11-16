@@ -1,6 +1,8 @@
-import { Serie } from "./Serie";
-import { MySimpleGraph } from "./MyGraph";
-import { log_essai_Circle } from "./test-my-js-lib";
+"use strict";
+/*
+import { Serie } from './Serie';
+import { MySimpleGraph } from './MyGraph';
+*/
 window.addEventListener("load", function () {
     document.querySelector('#btnRefresh').addEventListener('click', function () {
         let eltSelTypeChart = document.querySelector('#selTypeChart');
@@ -19,7 +21,6 @@ window.addEventListener("load", function () {
         let myGraph = new MySimpleGraph("myCanvas", sVal, sLabel);
         myGraph.setTypeChartAsString(strTypeChart);
         myGraph.render();
-        log_essai_Circle();
     });
 });
 //# sourceMappingURL=htmlGraph.js.map

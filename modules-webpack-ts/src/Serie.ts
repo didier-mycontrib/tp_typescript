@@ -1,4 +1,4 @@
-export class Serie<T> {
+/*export*/ class Serie<T> {
     constructor(public label : string ="?",
                 public values : Array<T>=[]){
                 }
