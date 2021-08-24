@@ -1,0 +1,11 @@
+obj1={"text":"aaa","ok":false,"tags":["v1"]}
+obj2={"text":"aaa","ok":false,"tags":["v1"]}
+obj3={"text":"aaa","ok":false,"tags":["v1"]}
+after obj2update, obj1={"text":"aaa","ok":false,"tags":["v1"]}
+after obj2update, obj2={"text":"bbb","ok":true,"tags":["v1","v2"]}
+after obj3update, obj1={"text":"aaa","ok":false,"tags":["v1","v3"]}
+after obj3update, obj3={"text":"ccc","ok":true,"tags":["v1","v3"]}
+1 : un
+2 : deux
+nord
+6
