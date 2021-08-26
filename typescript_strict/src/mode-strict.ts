@@ -24,7 +24,7 @@ class PersonneVa {
     nom : string;
     taille : number = 0; //1ere façon d'initialiser (valeur par défaut)
 
-    constructor(prenom="",nom=""){
+    constructor(prenom : string ="",nom :string =""){
         //2eme façon d'initialiser (via constructeur)
         this.prenom=prenom ; 
         this.nom=nom;

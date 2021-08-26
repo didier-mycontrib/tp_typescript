@@ -40,3 +40,6 @@ function withUnknowAssignementEffect(s) {
 }
 withUnknowAssignementEffect("ABC");
 withUnknowAssignementEffect(1234);
+//-----
+var sx = "abc";
+//let sx2 : string =new String("abc"); //Error !!!
