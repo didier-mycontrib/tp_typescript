@@ -129,3 +129,15 @@ console.log("pvd="+JSON.stringify(pvd));
 pvd.prenom= "jean"; pvd.nom= "Bon"; pvd.taille= 175;pvd.methodXy();
 console.log("pvd="+JSON.stringify(pvd));
 console.log("------------------");
+
+//------------- enum en mode strict
+
+enum Color {Red, Green, Blue}; // start at 0 by default
+type KeyOfColor = keyof typeof Color;
+
+// enum Color {Red = 1, Green, Blue}; 
+
+var c: Color = Color.Green;  console.log(c); //display as "1" by default
+var colorName: string = Color[1];  console.log(colorName); // "Green" if "Red" is at [0]
+var colorEnumVal =  Color["Green"];  console.log(colorEnumVal);//1 
+colorEnumVal =  Color[<KeyOfColor> colorName];  console.log(colorEnumVal);//1 

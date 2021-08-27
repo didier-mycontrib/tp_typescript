@@ -1,5 +1,5 @@
 
-interface Stat{
+export interface Stat{
     size:number;
     average:number;
     sum:number;
@@ -56,15 +56,18 @@ class StatComputer implements WithStats {
     }
 }
 
- function buildStatFromValues(values: Array<number>) : Stat{
+ export function buildStatFromValues(values: Array<number>) : Stat{
     let internatStatComputer=new StatComputer(values);
     return internatStatComputer.buildStat();
 }
 
-let myValues=[8, 2 ,6, 4 , 10];
-let myStatComputer=new StatComputer(myValues);
-console.log("size="+myStatComputer.size());  
-console.log("sum="+myStatComputer.sum());  
-console.log("average="+myStatComputer.average());  
-console.log("ecartType="+myStatComputer.ecartType());
-console.log("myStatComputer.buildStat()="+JSON.stringify(myStatComputer.buildStat(true)));
+export function testStats(){
+    console.log("---------- testStats -------------")
+    let myValues=[8, 2 ,6, 4 , 10];
+    let myStatComputer=new StatComputer(myValues);
+    console.log("size="+myStatComputer.size());  
+    console.log("sum="+myStatComputer.sum());  
+    console.log("average="+myStatComputer.average());  
+    console.log("ecartType="+myStatComputer.ecartType());
+    console.log("myStatComputer.buildStat()="+JSON.stringify(myStatComputer.buildStat(true)));
+}

@@ -111,3 +111,20 @@ pvd.taille = 175;
 pvd.methodXy();
 console.log("pvd=" + JSON.stringify(pvd));
 console.log("------------------");
+//------------- enum en mode strict
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Green"] = 1] = "Green";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+; // start at 0 by default
+// enum Color {Red = 1, Green, Blue}; 
+var c = Color.Green;
+console.log(c); //display as "1" by default
+var colorName = Color[1];
+console.log(colorName); // "Green" if "Red" is at [0]
+var colorEnumVal = Color["Green"];
+console.log(colorEnumVal); //1 
+colorEnumVal = Color[colorName];
+console.log(colorEnumVal); //1 

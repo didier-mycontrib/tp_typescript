@@ -1,23 +1,5 @@
-class Personne {
-  private _age : number;
-
-  constructor(public numero :number|undefined = undefined,
-              public nom : string ="?"){
-    this._age = 0;
-  }
-
-  public get age() : number { return this._age;}
-  public set age(newAge: number)  {
-    if(newAge>=0)
-       this._age = newAge;
-    //else console.log("age negatif interdit");
-    else throw "age negatif invalide"
-  }
-
-  incrementerAge():void {
-    this._age++;
-  }
-}
+import { Employe } from "./Employe";
+import { IPerson, Personne } from "./Personne";
 
 var p1 : Personne  = new Personne(1,"toto");
 p1.age = 30; 
@@ -33,13 +15,7 @@ console.log("numero de p1 :" + p1.numero);
 p1.incrementerAge() ;
 console.log("nouvel age de p1 :" + p1.age); //31
 
-class Employe extends Personne{
-  constructor(numero : number =0,
-              nom : string ="?",
-              public salaire : number = 0){
-          super(numero,nom);    
-    }
-}
+
 
 var e1 = new Employe(1,"toto",2500);
 e1.salaire=3000;
@@ -67,15 +43,6 @@ writable : true, enumerable : false, configurable : true});
 Reflect.defineProperty(p2, "age", {value: p2.age ,
     writable : true, enumerable : true, configurable : true});
 console.log(">>>>"+JSON.stringify(p2))
-
-// --------avec interface IPerson -----
-
-interface IPerson {
-  numero : number;
-  nom:string;
-  //age? : number;
-  prenom? : string
-}
 
 //let chose : any;  // 12 ou "abc" ou ...
 let chose : unknown;  // 12 ou "abc" ou ...
@@ -111,5 +78,4 @@ p3= Object.assign(new Personne() , persJs );
 console.log(p3.age);
 p3.incrementerAge();
 console.log(p3.age);
-
 
