@@ -1,17 +1,38 @@
-var Qcm = /** @class */ (function () {
-    function Qcm() {
+/*
+class Qcm {
+    passer():void {
+        console.log("Passer le QCM TS")
     }
-    Qcm.prototype.passer = function () {
-        console.log("Passer le QCM TS");
-    };
-    return Qcm;
-}());
+}
 var obj = new Qcm();
 obj.passer();
+
+
 //====================
-var qcm1 = "qcm";
-var qcm2;
-var qcm3 = 'qcm';
+
+var qcm1:string = "qcm";
+var qcm2:string ;
+var qcm3='qcm' ;
 var qcm4;
-var qcm5 = '10';
-var qcm6 = qcm5;
+var qcm5='10';
+var qcm6:number=<number><any> qcm5;
+
+// var global_num = 12
+class QcmV2 {
+    nombre = 20;
+    static sval = 10;
+    storeQcm() : void {
+        var local_num=14;
+    }
+}
+
+var qq = new QcmV2();
+console.log("qq="+JSON.stringify(qq));
+*/
+var qcm1 = {
+    ref: 'ts',
+    nom: "Base de ts",
+    passer: function () { return "passé !"; }
+};
+console.log(qcm1.nom);
+console.log(qcm1.passer());
