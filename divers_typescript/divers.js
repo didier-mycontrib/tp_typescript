@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 var obj1 = {
     text: "aaa",
     ok: false,
-    tags: ["v1"]
+    tags: ["v1"],
 };
 console.log("obj1=" + JSON.stringify(obj1));
 var obj2 = JSON.parse(JSON.stringify(obj1)); //deep copy .
@@ -32,7 +32,7 @@ console.log("after obj3update, obj3=" + JSON.stringify(obj3));
 var obj4 = {
     text: "ddd",
     ok: false,
-    tags: ["d1"]
+    tags: ["d1"],
 };
 function propV1(obj, key) {
     return obj[key];
