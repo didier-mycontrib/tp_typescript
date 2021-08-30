@@ -1,5 +1,5 @@
 class Personne {
-  private _age : number;
+  /*private*/ protected _age : number;
 
   constructor(public numero :number|undefined = undefined,
               public nom : string ="?"){
@@ -20,6 +20,7 @@ class Personne {
 }
 
 var p1 : Personne  = new Personne(1,"toto");
+//p1._age = 34; impossible car private
 p1.age = 30; 
 try{
 p1.age = -50;
@@ -36,12 +37,30 @@ console.log("nouvel age de p1 :" + p1.age); //31
 class Employe extends Personne{
   constructor(numero : number =0,
               nom : string ="?",
+              p_age : number = 0,
               public salaire : number = 0){
-          super(numero,nom);    
+          super(numero,nom);  
+          this._age = p_age; 
+          salaire=0;
+    }
+
+    incrementerAge() :void{
+       console.log("incrementerAge version employee");
+       super.incrementerAge();
     }
 }
+/*
+class Employe extends Personne{
 
-var e1 = new Employe(1,"toto",2500);
+  salaire : number =0;
+
+  constructor(numero : number =0,
+              nom : string ="?"){
+      super(numero,nom);    
+    }
+}*/
+
+var e1 = new Employe(1,"toto",45,2500);
 e1.salaire=3000;
 console.log("Empoye e1 :" + JSON.stringify(e1) + ' de type=' + typeof(e1));
 

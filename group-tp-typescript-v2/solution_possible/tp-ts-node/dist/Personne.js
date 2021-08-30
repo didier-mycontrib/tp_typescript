@@ -18,6 +18,7 @@ class Personne {
     }
 }
 var p1 = new Personne(1, "toto");
+//p1._age = 34; impossible car private
 p1.age = 30;
 try {
     p1.age = -50;
@@ -31,12 +32,28 @@ console.log("numero de p1 :" + p1.numero);
 p1.incrementerAge();
 console.log("nouvel age de p1 :" + p1.age); //31
 class Employe extends Personne {
-    constructor(numero = 0, nom = "?", salaire = 0) {
+    constructor(numero = 0, nom = "?", p_age = 0, salaire = 0) {
         super(numero, nom);
         this.salaire = salaire;
+        this._age = p_age;
+        salaire = 0;
+    }
+    incrementerAge() {
+        console.log("incrementerAge version employee");
+        super.incrementerAge();
     }
 }
-var e1 = new Employe(1, "toto", 2500);
+/*
+class Employe extends Personne{
+
+  salaire : number =0;
+
+  constructor(numero : number =0,
+              nom : string ="?"){
+      super(numero,nom);
+    }
+}*/
+var e1 = new Employe(1, "toto", 45, 2500);
 e1.salaire = 3000;
 console.log("Empoye e1 :" + JSON.stringify(e1) + ' de type=' + typeof (e1));
 //-------------- tests avec  instanceof
