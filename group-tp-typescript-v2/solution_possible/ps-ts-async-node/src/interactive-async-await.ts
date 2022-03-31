@@ -26,7 +26,7 @@ export class InteractiveComputer{
         });
     }
 
-    async ask_and_compute_x_plus_y() : Promise<number>{
+   async ask_and_compute_x_plus_y() : Promise<number>{
         try {
             let valX = await InteractiveComputer.ask_("x");
             this.x=Number(valX); 

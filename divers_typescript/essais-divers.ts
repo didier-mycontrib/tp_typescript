@@ -24,10 +24,19 @@ objC1.m1();
 
 //====================
 
+let v1 : string;
+v1 = "abc";
+
+let v2 : string = "abc";
+
+let v3 = "abc";
+
+//=====================
+
 var v='10'; //de type string
 var vv:number =<number><any> v; //idiot d'un point de vue "fonctionnel"
                                 //MAIS SANS ERREUR A LA COMPILATION !!!!
-console.log("vv="+v + " de type " + typeof vv); //affiche vv=10 de type string
+console.log("vv="+vv + " de type " + typeof vv); //affiche vv=10 de type string
 
 //====================
 

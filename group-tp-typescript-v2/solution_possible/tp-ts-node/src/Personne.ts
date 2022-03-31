@@ -92,7 +92,7 @@ console.log(">>>>"+JSON.stringify(p2))
 interface IPerson {
   numero : number;
   nom:string;
-  //age? : number;
+  age? : number;
   prenom? : string
 }
 
@@ -108,7 +108,7 @@ let persJs :IPerson = JSON.parse(persJsonString);
 //let persJs :IPerson = <IPerson> ( <any> JSON.parse(persJsonString) );
 //avec castings explicites dans les cas pointus
 
-// persJs = new IPerson(); interdit sur IPerson qui est une interface
+ //persJs = new IPerson();// interdit sur IPerson qui est une interface
 let persJs2 : IPerson = { numero:3  , nom : "Bon" , prenom : "jean"} ;
 
 function  affPerson(p:IPerson):void{

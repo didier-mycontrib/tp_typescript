@@ -87,7 +87,7 @@ let persJsonString = '{ "numero":2 , "nom" : "titi" , "prenom" : "p" } ';
 let persJs = JSON.parse(persJsonString);
 //let persJs :IPerson = <IPerson> ( <any> JSON.parse(persJsonString) );
 //avec castings explicites dans les cas pointus
-// persJs = new IPerson(); interdit sur IPerson qui est une interface
+//persJs = new IPerson();// interdit sur IPerson qui est une interface
 let persJs2 = { numero: 3, nom: "Bon", prenom: "jean" };
 function affPerson(p) {
     console.log("****" + p.nom + " " + p.numero);

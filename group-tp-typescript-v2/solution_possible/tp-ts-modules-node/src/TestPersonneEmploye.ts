@@ -1,6 +1,7 @@
 import { Employe } from "./Employe";
 import { IPerson, Personne } from "./Personne";
 
+
 var p1 : Personne  = new Personne(1,"toto");
 p1.age = 30; 
 try{

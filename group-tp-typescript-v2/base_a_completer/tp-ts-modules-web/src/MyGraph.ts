@@ -1,6 +1,8 @@
 
 //simple type definitions for content of chart.js
 
+
+
 interface Chart{
     //details in chart.js
 }
@@ -36,7 +38,7 @@ var myGraphDefaultBorderColors : Array<String>= [
     'rgba(255, 159, 64, 1)'
 ]
 
- /*export*/  class MySimpleGraph {
+ /*export */ class MySimpleGraph {
     //chartsMap = Map beetwen idCanvas and chart
     //to destroy old chart before create new one:
     private static chartsMap = new Map();

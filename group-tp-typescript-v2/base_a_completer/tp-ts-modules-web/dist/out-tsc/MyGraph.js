@@ -29,7 +29,7 @@ var myGraphDefaultBorderColors = [
     'rgba(153, 102, 255, 1)',
     'rgba(255, 159, 64, 1)'
 ];
-/*export*/ var MySimpleGraph = /** @class */ (function () {
+/*export */ var MySimpleGraph = /** @class */ (function () {
     function MySimpleGraph(idCanvasElement, dataSerie, labelSerie) {
         this.idCanvasElement = idCanvasElement;
         this.dataSerie = dataSerie;

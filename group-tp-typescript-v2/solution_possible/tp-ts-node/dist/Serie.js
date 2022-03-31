@@ -9,7 +9,7 @@ class Serie {
 /*
 class Serie {
     constructor(public label : string ="?",
-                public values : Array<number>=[]){
+                public values : number[]=[]){
                 }
     push(val:number){this.values.push(val);}
 }*/
