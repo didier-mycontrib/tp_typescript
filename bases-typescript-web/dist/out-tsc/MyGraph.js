@@ -1,3 +1,9 @@
+"use strict";
+//declare function Chart(...args:any): any; //ok only with "strict" = false
+//import { Chart , ChartColor } from 'chart.js'; //with npm i --save-dev @types/chart.js
+//import  { Chart } from 'chart.js'; //with npm i --save-dev @types/chart.js
+//import Chart , { ChartTypeRegistry} from 'chart.js/auto';
+//import { Serie } from './Serie';
 var NB_DEFAULT_COLORS = 6;
 var MyGraphType;
 (function (MyGraphType) {
@@ -5,9 +11,11 @@ var MyGraphType;
     MyGraphType[MyGraphType["line"] = 1] = "line";
     MyGraphType[MyGraphType["pie"] = 2] = "pie";
     MyGraphType[MyGraphType["doughnut"] = 3] = "doughnut";
-    MyGraphType[MyGraphType["horizontalBar"] = 4] = "horizontalBar";
+    MyGraphType[MyGraphType["polarArea"] = 4] = "polarArea";
+    MyGraphType[MyGraphType["radar"] = 5] = "radar";
 })(MyGraphType || (MyGraphType = {}));
 ;
+//NB: key of MyGraphType are the sames of key of ChartTypeRegistry of chart.js 
 //tableau des N premières couleurs par défaut ("background"):
 var myGraphDefaultBackgroundColors = [
     'rgba(255, 99, 132, 0.8)',
@@ -28,12 +36,10 @@ var myGraphDefaultBorderColors = [
 ];
 var MySimpleGraph = /** @class */ (function () {
     function MySimpleGraph(idCanvasElement, dataSerie, labelSerie) {
-        if (idCanvasElement === void 0) { idCanvasElement = undefined; }
-        if (dataSerie === void 0) { dataSerie = undefined; }
-        if (labelSerie === void 0) { labelSerie = undefined; }
         this.idCanvasElement = idCanvasElement;
         this.dataSerie = dataSerie;
         this.labelSerie = labelSerie;
+        this.ctx = "null";
         this.chartType = MyGraphType.pie;
     }
     MySimpleGraph.prototype.setTypeChartAsString = function (strTypeChart) {
@@ -51,8 +57,8 @@ var MySimpleGraph = /** @class */ (function () {
                 }
             }
         }
-        var canvasElement = document.getElementById(this.idCanvasElement);
-        this.ctx = canvasElement.getContext('2d');
+        var canvasElement = document.getElementById(this.idCanvasElement || "?");
+        this.ctx = canvasElement.getContext('2d') || "null";
         if (MySimpleGraph.chartsMap.has(this.idCanvasElement))
             MySimpleGraph.chartsMap.get(this.idCanvasElement).destroy();
         this.chart = new Chart(this.ctx, {
@@ -60,27 +66,27 @@ var MySimpleGraph = /** @class */ (function () {
             data: {
                 labels: this.labelSerie ? this.labelSerie.values : [],
                 datasets: [{
-                        /*label: this.labelSerie?this.labelSerie.label:null,*/
+                        label: this.labelSerie ? this.labelSerie.label : undefined,
                         data: this.dataSerie ? this.dataSerie.values : [],
                         backgroundColor: myGraphDefaultBackgroundColors,
-                        borderColor: this.chartType == MyGraphType.line ? 'blue' : myGraphDefaultBorderColors,
+                        borderColor: (this.chartType == MyGraphType.line) ? 'blue' : myGraphDefaultBorderColors,
                         borderWidth: 1,
                         fill: this.chartType == MyGraphType.line ? false : true
                     }]
             },
             options: {
                 responsive: false,
-                legend: { display: (this.chartType == MyGraphType.pie || this.chartType == MyGraphType.doughnut) ? true : false },
-                title: {
-                    display: true,
-                    text: this.labelSerie ? this.labelSerie.label : 'chart'
+                plugins: {
+                    legend: {
+                        display: (this.chartType == MyGraphType.pie || this.chartType == MyGraphType.doughnut) ? true : false
+                    },
+                    title: {
+                        display: true,
+                        text: this.labelSerie ? this.labelSerie.label : 'chart'
+                    }
                 },
                 scales: {
-                    yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
+                    y: { beginAtZero: true }
                 }
             }
         });

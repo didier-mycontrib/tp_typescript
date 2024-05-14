@@ -1,3 +1,4 @@
+"use strict";
 var GenericNumberUtil = /** @class */ (function () {
     function GenericNumberUtil() {
     }

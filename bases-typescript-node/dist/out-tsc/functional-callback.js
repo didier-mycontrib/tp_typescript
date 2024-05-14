@@ -1,3 +1,4 @@
+"use strict";
 var XyResponse = /** @class */ (function () {
     function XyResponse(data, status) {
         this.data = data;

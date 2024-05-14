@@ -1,7 +1,7 @@
 class GenericNumberUtil<T> {
-    zeroValue: T;
+    zeroValue: T|undefined;
     add (x: T, y: T) : T {
-         return <T> <any>(Number(x)+Number(y)) ;
+         return <T> (Number(x)+Number(y));
      }
 }
 

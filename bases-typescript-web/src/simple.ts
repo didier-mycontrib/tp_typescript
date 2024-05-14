@@ -1,12 +1,11 @@
 class SimpleApp {
 
-    x:number;
-    y:number;
+    x:number=0;
+    y:number=0;
 
     init(){
-        var btnAdd = document.getElementById("btnActionXy");
-		
-		btnAdd.addEventListener('click', (evt) => this.onActionXy(evt) , false);
+        const btnAdd : HTMLElement | null = document.getElementById("btnActionXy");
+		btnAdd?.addEventListener('click', (evt) => this.onActionXy(evt) , false);
     }
 
     onActionXy(evt:any){

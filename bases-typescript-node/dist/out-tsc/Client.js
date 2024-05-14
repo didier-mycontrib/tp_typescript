@@ -1,3 +1,4 @@
+"use strict";
 var Client = /** @class */ (function () {
     function Client(numero, nom) {
         if (numero === void 0) { numero = 0; }

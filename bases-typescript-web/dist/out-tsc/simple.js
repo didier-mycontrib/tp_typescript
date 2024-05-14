@@ -1,10 +1,13 @@
+"use strict";
 var SimpleApp = /** @class */ (function () {
     function SimpleApp() {
+        this.x = 0;
+        this.y = 0;
     }
     SimpleApp.prototype.init = function () {
         var _this = this;
         var btnAdd = document.getElementById("btnActionXy");
-        btnAdd.addEventListener('click', function (evt) { return _this.onActionXy(evt); }, false);
+        btnAdd === null || btnAdd === void 0 ? void 0 : btnAdd.addEventListener('click', function (evt) { return _this.onActionXy(evt); }, false);
     };
     SimpleApp.prototype.onActionXy = function (evt) {
         console.log(evt.target.value);

@@ -1,29 +1,29 @@
-class Serie<T> {
+ class Serie<T> {
     constructor(public label : string ="?",
                 public values : Array<T>=[]){
                 }
     push(val:T){this.values.push(val);}
 }
 
-interface Stat{
+ interface Stat{
     size:number;
     average:number;
     sum:number;
     ecartType? :number;
 }
 
-interface StatBuilder {
+ interface StatBuilder {
     buildStat(withEcartType:boolean):Stat;
 }
 
-interface WithStats extends StatBuilder {
+ interface WithStats extends StatBuilder {
      size() : number;
      average():number;
      sum():number;
      ecartType():number;
 }
 
-class StatComputer implements WithStats {
+ class StatComputer implements WithStats {
 
     constructor(public values : Array<number>=[]){
     }
@@ -62,7 +62,7 @@ class StatComputer implements WithStats {
     }
 }
 
-class StatSerie extends Serie<number> implements StatBuilder  {
+ class StatSerie extends Serie<number> implements StatBuilder  {
     private statComputer : WithStats;
     constructor(label : string ="?",
                values : Array<number>=[]){

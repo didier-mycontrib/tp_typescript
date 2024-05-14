@@ -1,3 +1,4 @@
+"use strict";
 //module Validation {
 var Validation;
 (function (Validation) {

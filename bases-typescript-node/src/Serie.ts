@@ -2,7 +2,7 @@ class Serie {
     constructor(public label : string ="?",
                 public values : Array<number>=[]){
                 }
-    push(val){this.values.push(val);}
+    push(val :number){this.values.push(val);}
 }
 
 interface Stat{
