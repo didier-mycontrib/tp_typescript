@@ -1,0 +1,24 @@
+{
+"compileOnSave": true,
+"compilerOptions": {
+    "baseUrl": "",
+    "module": "ES2015",
+    "lib": ["es2017", "dom"], 
+    "moduleResolution": "node",
+    "declaration": false,
+    "experimentalDecorators": true,
+    "outDir": "dist/js",
+    "sourceMap": true,
+    "target": "es2017",
+    "strict" : true,
+    "noEmitOnError" : false
+  },
+  "include": [
+       "src/**/*"
+   ],
+   "exclude": [
+       "node_modules",
+       "**/*.spec.ts",
+       "dist"
+   ]
+}

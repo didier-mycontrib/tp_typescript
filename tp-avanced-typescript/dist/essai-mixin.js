@@ -14,10 +14,10 @@ var Avion = /** @class */ (function () {
 var a1 = new Avion();
 console.log('a1=' + JSON.stringify(a1));
 //nouvelle classe AvionFlottant basée sur classe Avion et enrichie via Mixin Flottant
-var AvionFlottant = my_mixins_1.Flottant(Avion);
+var AvionFlottant = (0, my_mixins_1.Flottant)(Avion);
 //nouvelle classe ActionFlottantWithTimestamp basée sur classe AvionFlottant et enrichie via Mixin Timestamped
 //(resultat d'une double application de mixins)
-var ActionFlottantWithTimestamp = my_mixins_1.Timestamped(AvionFlottant);
+var ActionFlottantWithTimestamp = (0, my_mixins_1.Timestamped)(AvionFlottant);
 //test de AvionFlottant
 var a2 = new AvionFlottant();
 console.log('a2=' + JSON.stringify(a2));

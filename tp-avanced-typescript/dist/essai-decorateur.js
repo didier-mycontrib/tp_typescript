@@ -56,8 +56,8 @@ function myLogMethodDecocator(paramMaj) {
                 returnValue = returnValue.toUpperCase();
             }
             var params = args.map(function (arg) { return JSON.stringify(arg); }).join();
-            console.log(">>myLogMethodDecocator intercept call of " + methodNameAspropertyKey + "(" + params + ")"
-                + (" returnValue is " + returnValue));
+            console.log(">>myLogMethodDecocator intercept call of ".concat(methodNameAspropertyKey, "(").concat(params, ")")
+                + " returnValue is ".concat(returnValue));
             return returnValue;
         };
         return descriptor;
@@ -96,7 +96,7 @@ function myLogClassDecorator() {
             for (var _i = 0; _i < arguments.length; _i++) {
                 args[_i] = arguments[_i];
             }
-            console.log(">>> myLogClassDecorator , New: " + originalConstructor['name'] + " is created");
+            console.log(">>> myLogClassDecorator , New: ".concat(originalConstructor['name'], " is created"));
             return Reflect.construct(originalConstructor, args);
         };
         // copy prototype so intanceof operator still works
