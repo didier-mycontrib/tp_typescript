@@ -1,17 +1,10 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
 import { MyAbstractWebComponent } from "./my-abstract-web-component";
-import { customElement } from "./my-component-decorator";
-let TogglePanelComponent = class TogglePanelComponent extends MyAbstractWebComponent {
+class TogglePanelComponent extends MyAbstractWebComponent {
     // component attributes
     static get observedAttributes() {
         return ['label'];
     }
-    constructor(label = "TogglePanelComponent", toggleP = false) {
+    constructor(label = "defaultPanelLabel", toggleP = false) {
         super();
         this.label = label;
         this.toggleP = toggleP;
@@ -66,9 +59,6 @@ let TogglePanelComponent = class TogglePanelComponent extends MyAbstractWebCompo
                 myIconCollapse.style.display = this.toggleP ? 'inline-block' : 'none';
         });
     }
-};
-TogglePanelComponent = __decorate([
-    customElement("toggle-panel-component")
-], TogglePanelComponent);
-//customElements.define("toggle-panel-component", TogglePanelComponent)
+}
+customElements.define("toggle-panel-component", TogglePanelComponent);
 //# sourceMappingURL=toggle-panel-component.js.map

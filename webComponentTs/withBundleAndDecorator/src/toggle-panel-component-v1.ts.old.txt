@@ -1,6 +1,7 @@
 import { MyAbstractWebComponent } from "./my-abstract-web-component";
+import { customElement } from "./my-component-decorator";
 
-
+@customElement("toggle-panel-component")
 class TogglePanelComponent extends MyAbstractWebComponent {
 
     // component attributes
@@ -68,5 +69,5 @@ class TogglePanelComponent extends MyAbstractWebComponent {
     }
   
   }
-  
-  customElements.define("toggle-panel-component", TogglePanelComponent)
+  //now, this is done by the @customElement() decorator:
+  //customElements.define("toggle-panel-component", TogglePanelComponent)
