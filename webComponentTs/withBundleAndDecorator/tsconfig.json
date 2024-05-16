@@ -7,9 +7,10 @@
     "moduleResolution": "node",
     "declaration": false,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,         
     "outDir": "dist/js",
     "sourceMap": true,
-    "target": "es2017",
+    "target": "es2022",
     "strict" : true,
     "noEmitOnError" : false
   },

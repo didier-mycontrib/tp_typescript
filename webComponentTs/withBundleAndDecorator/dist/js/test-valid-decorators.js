@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 function getInUppercase(target, propertyName) {
     //target is protype objet of current object
     let value /*= Reflect.get(target,propertyName)*/; //will be used in subscoped get / set arrow functions
@@ -48,16 +51,20 @@ function Min(minimum) {
     };
 }
 class Person {
+    username;
+    size;
     constructor(username = "toto", size = 0) {
         this.username = username;
         this.size = size;
     }
 }
 __decorate([
-    getInUppercase
+    getInUppercase,
+    __metadata("design:type", String)
 ], Person.prototype, "username", void 0);
 __decorate([
-    Min(0)
+    Min(0),
+    __metadata("design:type", Number)
 ], Person.prototype, "size", void 0);
 let p1 = new Person("toto", 180);
 console.log("p1.username=" + p1.username + " p1.size=" + p1.size);
