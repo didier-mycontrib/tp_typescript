@@ -1,10 +1,7 @@
-"use strict";
-/*
 import { CanvasVisitor } from "./canvas-fig-visitor";
 import { ConsoleJsonVisitor } from "./console-fig-visitor";
-import { Circle, Fig2D, Line, Rectangle } from "./fig";
-*/
-/*export*/ function my_ts_test() {
+import { Circle, Line, Rectangle } from "./fig";
+export function my_ts_test() {
     var tabFig = new Array();
     tabFig.push(new Line(20, 20, 180, 200, "red"));
     tabFig.push(new Circle(100, 100, 50, "blue"));

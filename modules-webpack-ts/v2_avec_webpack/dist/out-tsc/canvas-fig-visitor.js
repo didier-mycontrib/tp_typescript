@@ -1,6 +1,4 @@
-"use strict";
-/*import { Circle, FigVisitor, Line, Rectangle } from "./fig";*/
-/*export*/ class CanvasVisitor {
+export class CanvasVisitor {
     constructor(canvasId) {
         this.canvasId = canvasId;
         this._canvasElement = null;

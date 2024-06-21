@@ -2,7 +2,7 @@
 export abstract class Fig2D {
   constructor(public lineColor : string = "black",
               public lineWidth : number = 1,
-              public fillColor : string|undefined = undefined){
+              public fillColor : string = "white"){
   }
 abstract  performVisit(visitor : FigVisitor) : void ;
 }
@@ -15,7 +15,7 @@ export class Line  extends Fig2D{
                  super(lineColor,lineWidth);
   }
   performVisit(visitor : FigVisitor) : void {
-     visitor.doActionForLine(this);
+     visitor.doActionForLine(this); 
    }
 }
 
@@ -25,7 +25,7 @@ export class Circle  extends Fig2D{
               public r:number = 0,
               lineColor : string = "black",
               lineWidth : number = 1,
-              fillColor : string|undefined = undefined){
+              fillColor : string = "white"){
                  super(lineColor,lineWidth,fillColor);
   }
   performVisit(visitor : FigVisitor) : void {
@@ -40,7 +40,7 @@ export class Rectangle  extends Fig2D{
               public height:number = 0,
               lineColor : string = "black",
               lineWidth : number = 1,
-              fillColor : string|undefined = undefined){
+              fillColor : string = "white"){
                  super(lineColor,lineWidth,fillColor);
   }
   performVisit(visitor : FigVisitor) : void {
@@ -53,8 +53,3 @@ export interface FigVisitor {
   doActionForLine( l : Line) : void;
   doActionForRectangle(r : Rectangle) : void;
 }
-
-
-
-
-

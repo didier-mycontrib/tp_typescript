@@ -1,5 +1,4 @@
-"use strict";
-/*import { my_ts_test } from "./fig-test";*/
+import { my_ts_test } from "./fig-test";
 var lastXc = undefined;
 var lastYc = undefined;
 window.addEventListener("load", function () {

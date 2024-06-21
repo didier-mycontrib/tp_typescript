@@ -1,6 +1,6 @@
-/*import { Circle, FigVisitor, Line, Rectangle } from "./fig";*/
+import { Circle, FigVisitor, Line, Rectangle } from "./fig";
 
-/*export*/ class CanvasVisitor  implements FigVisitor{
+export class CanvasVisitor  implements FigVisitor{
     private _canvasElement : any = null;
     private _ctx : any = null; //2d  context in html5 canvas
     constructor(public canvasId : string){

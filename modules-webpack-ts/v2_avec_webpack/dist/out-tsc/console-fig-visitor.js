@@ -1,6 +1,4 @@
-"use strict";
-/*import { Circle, FigVisitor, Line, Rectangle } from "./fig";*/
-/*export*/ class ConsoleJsonVisitor {
+export class ConsoleJsonVisitor {
     doActionForCircle(c) {
         console.log("{circle: " + JSON.stringify(c) + "}");
     }
