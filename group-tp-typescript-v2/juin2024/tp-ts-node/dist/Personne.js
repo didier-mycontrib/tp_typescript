@@ -41,5 +41,6 @@ function afficherJolimentPersonne(p) {
 exports.default = {
     name: "personnequeJaime",
     afficherJolimentPersonne: afficherJolimentPersonne
+    //afficherJolimentPersonne
 };
 //# sourceMappingURL=Personne.js.map

@@ -43,6 +43,7 @@ function afficherJolimentPersonne( p: Personne){
 export default {
      name : "personnequeJaime",
      afficherJolimentPersonne : afficherJolimentPersonne
+     //afficherJolimentPersonne
 };
 
 
