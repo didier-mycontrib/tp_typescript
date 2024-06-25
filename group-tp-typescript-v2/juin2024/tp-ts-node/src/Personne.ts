@@ -32,7 +32,7 @@ class Personne{
 class Employe extends Personne{
     salaire:number=0;
 
-    constructor(numero:number,nom:string,age:number,salaire:number){
+    constructor(numero:number=0,nom:string="?",age:number=0,salaire:number=0){
          super(numero,nom,age);
          this.salaire=salaire;
     }

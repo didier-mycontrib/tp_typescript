@@ -27,7 +27,7 @@ class Personne {
 }
 Personne.ageMajorite = 18;
 class Employe extends Personne {
-    constructor(numero, nom, age, salaire) {
+    constructor(numero = 0, nom = "?", age = 0, salaire = 0) {
         super(numero, nom, age);
         this.salaire = 0;
         this.salaire = salaire;
