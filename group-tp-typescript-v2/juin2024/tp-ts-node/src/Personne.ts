@@ -70,3 +70,10 @@ console.log("p2=" + JSON.stringify(p2));
 console.log("p2 estMajeur ? : " + p2.estMajeur()); 
 //Personne.ageMajorite=17;
 //console.log("p2 estMajeur ? : " + p2.estMajeur());
+/*
+Reflect.defineProperty(p2, "_age", {value: p2.age , 
+    writable : true, enumerable : false, configurable : true});
+Reflect.defineProperty(p2, "age", {value: p2.age ,
+    writable : true, enumerable : true, configurable : true});
+console.log(">>>>"+JSON.stringify(p2))
+*/
