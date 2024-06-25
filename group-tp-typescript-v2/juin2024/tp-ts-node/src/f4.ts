@@ -19,3 +19,11 @@ console.log("type de var add=" + typeof add); //affiche function
 
 let resAdd = add(5,6);
 console.log("resAdd="+resAdd);
+
+/*
+var fctDiffere = () => { console.log(new Date())}
+setTimeout(fctDiffere , 3000); //déclenche du code en différé dans "000 ms = 3s
+*/
+
+setTimeout(()=> { console.log(new Date())} ,
+            3000); //déclenche du code en différé dans "000 ms = 3s
