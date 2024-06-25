@@ -1,5 +1,10 @@
 "use strict";
 class Personne {
+    constructor(numero = 0, nom = "?", _age = 0) {
+        this.numero = numero;
+        this.nom = nom;
+        this._age = _age;
+    }
     get age() {
         return this._age;
     }
@@ -9,11 +14,6 @@ class Personne {
         //else throw "age négatif invalide"; //à ratrapper via try/catch
         else
             console.log("age négatif invalide");
-    }
-    constructor(numero = 0, nom = "?", age = 0) {
-        this.numero = numero;
-        this.nom = nom;
-        this._age = age;
     }
     incrementAge() {
         this._age++;
