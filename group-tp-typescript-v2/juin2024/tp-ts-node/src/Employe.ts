@@ -1,4 +1,5 @@
-import { Personne} from "./Personne"
+import { Personne } from "./Personne";
+
 
 export class Employe extends Personne{
     salaire:number=0;

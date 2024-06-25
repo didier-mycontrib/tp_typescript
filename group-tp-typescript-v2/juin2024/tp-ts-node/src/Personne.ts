@@ -35,5 +35,15 @@ function test1(){
     console.log("test1 de Personne");
 }
 
+//cette fonction sera indirectement exportée via export default ....
+function afficherJolimentPersonne( p: Personne){
+   console.log("***" + JSON.stringify(p));
+}
+
+export default {
+     name : "personnequeJaime",
+     afficherJolimentPersonne : afficherJolimentPersonne
+};
+
 
 

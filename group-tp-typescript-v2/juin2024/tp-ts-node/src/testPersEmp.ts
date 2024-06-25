@@ -1,5 +1,8 @@
-import { Personne } from "./Personne";
 import { Employe } from "./Employe";
+
+// le pers du import sans accolade correspond à la chose exportée
+// via export default dans le fichier Personne.ts
+import  pers , { Personne } from "./Personne";
 
 var e1 = new Employe(1,"toto",35,2500);
 console.log("Empoye e1 :" + JSON.stringify(e1));
@@ -11,6 +14,8 @@ console.log("e1.occupations()="+e1.occupations());
 let p1 = new Personne(1,"toto", 50);
 console.log("p1=" + JSON.stringify(p1));
 console.log(`p1.age=${p1.age}`);
+
+pers.afficherJolimentPersonne(p1);
 
 let p2 = new Personne();
 console.log("p2=" + JSON.stringify(p2));

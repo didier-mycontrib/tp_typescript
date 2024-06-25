@@ -34,4 +34,12 @@ Personne.ageMajorite = 18;
 function test1() {
     console.log("test1 de Personne");
 }
+//cette fonction sera indirectement exportée via export default ....
+function afficherJolimentPersonne(p) {
+    console.log("***" + JSON.stringify(p));
+}
+exports.default = {
+    name: "personnequeJaime",
+    afficherJolimentPersonne: afficherJolimentPersonne
+};
 //# sourceMappingURL=Personne.js.map
