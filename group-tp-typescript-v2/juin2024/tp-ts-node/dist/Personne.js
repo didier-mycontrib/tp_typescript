@@ -59,13 +59,25 @@ console.log("p2 estMajeur ? : " + p2.estMajeur());
 p2.age = 17;
 console.log("p2=" + JSON.stringify(p2));
 console.log("p2 estMajeur ? : " + p2.estMajeur());
-//Personne.ageMajorite=17;
-//console.log("p2 estMajeur ? : " + p2.estMajeur());
-/*
-Reflect.defineProperty(p2, "_age", {value: p2.age ,
-    writable : true, enumerable : false, configurable : true});
-Reflect.defineProperty(p2, "age", {value: p2.age ,
-    writable : true, enumerable : true, configurable : true});
-console.log(">>>>"+JSON.stringify(p2))
-*/ 
+//let chose : any;  // 12 ou "abc" ou ...
+let chose; // 12 ou "abc" ou …
+let obj2;
+//obj= null; 
+obj2 = { numero: 2 };
+//données souvent récupérées via HTTP
+let persJsonString = '{ "numero":2 , "nom" : "titi" , "prenom" : "p" } ';
+let persJs = JSON.parse(persJsonString);
+//let persJs :IPerson = <IPerson> ( <any> JSON.parse(persJsonString) );
+//avec castings explicites dans les cas pointus
+// persJs = new IPerson(); interdit sur IPerson qui est une interface
+let persJs2 = { numero: 3, nom: "Bon", prenom: "jean" };
+function affPerson(p) {
+    console.log("****" + p.nom + " " + p.numero);
+}
+function affPersonMoinsBien(p) {
+    let pa = p;
+    console.log("****" + pa["nom"] + " " + pa["numero"]);
+}
+affPerson(persJs);
+//affPersonMoinsBien(persJs);
 //# sourceMappingURL=Personne.js.map

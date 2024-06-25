@@ -7,7 +7,8 @@ let m =" coucou";
 m=" coucou 2";
 console.log("m="+m);
 
-let x  :number =25;
+var x  :number =25;
+
 let chx="25";
 
 console.log(typeof x);

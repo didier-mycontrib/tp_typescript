@@ -6,7 +6,7 @@ console.log(message);
 let m = " coucou";
 m = " coucou 2";
 console.log("m=" + m);
-let x = 25;
+var x = 25;
 let chx = "25";
 console.log(typeof x);
 let v;
