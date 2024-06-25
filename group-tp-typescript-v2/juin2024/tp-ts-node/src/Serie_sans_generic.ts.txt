@@ -1,0 +1,18 @@
+class Serie {
+    private name : string="serie";
+    private tabVal : number[]=[];
+    
+    constructor(name:string="serie" , tabVal : number[]=[]){
+        this.name=name;
+        this.tabVal=tabVal;
+    }
+
+    push(val:number){
+        this.tabVal.push(val);
+    }
+}
+
+
+   let serie1 = new Serie("serie1",[2,6,8]);
+   serie1.push(4);serie1.push(5);//[2,6,8 , 4, 5 ]
+   console.log(JSON.stringify(serie1));

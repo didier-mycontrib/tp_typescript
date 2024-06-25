@@ -12,7 +12,7 @@ var add = (a:number,b:number) :number =>{
 }
 */
 
-var add = (a:number,b:number) :number =>  a+b
+var add = (a:number,b:number) :number =>  a+b;
 
 
 console.log("type de var add=" + typeof add); //affiche function
