@@ -6,6 +6,7 @@ class Personne {
         this.numero = numero;
         this.nom = nom;
         this._age = _age;
+        //   test1();
     }
     occupations() {
         return "manger,dormir,loisir";
@@ -29,4 +30,8 @@ class Personne {
 }
 exports.Personne = Personne;
 Personne.ageMajorite = 18;
+//fonction interne que je n'exporte pas
+function test1() {
+    console.log("test1 de Personne");
+}
 //# sourceMappingURL=Personne.js.map

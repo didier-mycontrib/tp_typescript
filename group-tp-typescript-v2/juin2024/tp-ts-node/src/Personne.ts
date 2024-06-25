@@ -4,6 +4,7 @@ export class Personne{
     constructor(public numero:number=0,         
                 public nom:string="?",                
                 private _age:number=0){
+                 //   test1();
     }
 
     occupations(){
@@ -27,6 +28,11 @@ export class Personne{
     incrementAge(){
            this._age++;
     }
+}
+
+//fonction interne que je n'exporte pas
+function test1(){
+    console.log("test1 de Personne");
 }
 
 
