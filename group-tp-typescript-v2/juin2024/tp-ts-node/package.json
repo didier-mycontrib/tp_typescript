@@ -1,19 +1,9 @@
 {
- 
-"devDependencies": {
- 
- 
-"@types/node": "^20.14.9",
- 
- 
-"@types/node-fetch": "^2.6.11"
- 
-},
- 
-"dependencies": {
- 
- 
-"node-fetch": "^3.3.2"
- 
-}
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/node-fetch": "^2.6.11"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
 }
