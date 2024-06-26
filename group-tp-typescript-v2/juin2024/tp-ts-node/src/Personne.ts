@@ -37,7 +37,7 @@ function test1(){
 
 //cette fonction sera indirectement exportée via export default ....
 function afficherJolimentPersonne( p: Personne){
-   console.log("***" + JSON.stringify(p));
+   console.log("*** " + JSON.stringify(p));
 }
 
 export default {

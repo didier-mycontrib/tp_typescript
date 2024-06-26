@@ -1,10 +1,19 @@
 {
-  "devDependencies": {
-    "@eslint/js": "^9.5.0",
-    "@typescript-eslint/eslint-plugin": "^7.13.1",
-    "@typescript-eslint/parser": "^7.13.1",
-    "eslint": "^9.5.0",
-    "globals": "^15.6.0",
-    "typescript-eslint": "^7.13.1"
-  }
+ 
+"devDependencies": {
+ 
+ 
+"@types/node": "^20.14.9",
+ 
+ 
+"@types/node-fetch": "^2.6.11"
+ 
+},
+ 
+"dependencies": {
+ 
+ 
+"node-fetch": "^3.3.2"
+ 
+}
 }

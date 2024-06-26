@@ -1,6 +1,6 @@
-/*
+
 /// <reference path = "../dist/lib/d.ts/my-js-lib.d.ts" />
-*/
+
 /*
 function log_essai_Circle(){
     console.log("log_essai_Circle ...")

@@ -1,0 +1,11 @@
+index.html ---> fig-canvas-ts.html (dessin)
+           ---> myGraph.html  (diagrammes basés sur charts js et classe utilitaire typescript)
+
+=====================
+
+fig-canvas-ts.html  --> 
+
+
+========================
+
+myGraph.html --->

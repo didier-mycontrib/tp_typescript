@@ -10,7 +10,7 @@ function add_delegating_to_js_lib(x:number, y:number){
 } 
 
 function log_essai_stats(){
-   unite='cm';
+   unite="cm";
    var statEntries1 :Entry[] =[ { x:3,y:5} , { x:5,y:7},  { x:7,y:9} ];
    var stats1 :Stat[] = buildStats(statEntries1);
    console.log("statEntries1="+JSON.stringify(statEntries1));
