@@ -16,7 +16,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Timestamped = exports.Flottant = void 0;
+exports.Flottant = Flottant;
+exports.Timestamped = Timestamped;
+exports.Autonome = Autonome;
 //Mixin ajoutant la fonctionalité "flotter sur l'eau":
 function Flottant(Base) {
     return /** @class */ (function (_super) {
@@ -32,7 +34,6 @@ function Flottant(Base) {
         return class_1;
     }(Base));
 }
-exports.Flottant = Flottant;
 //Mixin ajoutant la fonctionalité générique "timestamped":
 function Timestamped(Base) {
     return /** @class */ (function (_super) {
@@ -48,4 +49,18 @@ function Timestamped(Base) {
         return class_2;
     }(Base));
 }
-exports.Timestamped = Timestamped;
+//Mixin ajoutant la fonctionalité générique "timestamped":
+function Autonome(Base) {
+    return /** @class */ (function (_super) {
+        __extends(class_3, _super);
+        function class_3() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.licence = "licence gouvernementale"; //default value
+            return _this;
+        }
+        class_3.prototype.automatique = function () {
+            console.log("voiture autonome qui se conduit automatiquement=" + this.licence);
+        };
+        return class_3;
+    }(Base));
+}

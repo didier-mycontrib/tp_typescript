@@ -2,6 +2,9 @@
 npm install -s node-fetch
 npm i --save-dev @types/node-fetch
 */
+/*
+fetch , axios , XMLHttpRequest , jQuery , RxJs  ...
+*/
 import fetch from "node-fetch";
 async function myFetch(url) {
     try {

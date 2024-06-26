@@ -3,6 +3,10 @@ npm install -s node-fetch
 npm i --save-dev @types/node-fetch
 */
 
+/*
+fetch , axios , XMLHttpRequest , jQuery , RxJs  ...
+*/
+
 import fetch , { Response} from "node-fetch";
 
 interface CatFact{

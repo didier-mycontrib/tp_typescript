@@ -1,4 +1,4 @@
-import { Circle, FigVisitor, Line, Rectangle } from "./fig";
+
 
 export class CanvasVisitor  implements FigVisitor{
     private _canvasElement : any = null;

@@ -1,4 +1,4 @@
-import { my_ts_test } from "./fig-test";
+
 
 var lastXc : number|undefined = undefined;
 var lastYc : number|undefined = undefined;

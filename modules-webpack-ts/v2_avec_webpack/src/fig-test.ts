@@ -1,7 +1,5 @@
 
-import { CanvasVisitor } from "./canvas-fig-visitor";
-import { ConsoleJsonVisitor } from "./console-fig-visitor";
-import { Circle, Fig2D, Line, Rectangle } from "./fig";
+
 
 export function my_ts_test(){
     var tabFig : Fig2D[] = new Array<Fig2D>();

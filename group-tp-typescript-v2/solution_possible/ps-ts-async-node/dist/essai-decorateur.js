@@ -58,8 +58,8 @@ function myLogMethodDecocator(paramMaj) {
                 returnValue = returnValue.toUpperCase();
             }
             var params = args.map(function (arg) { return JSON.stringify(arg); }).join();
-            console.log(">>myLogMethodDecocator intercept call of " + methodNameAspropertyKey + "(" + params + ")"
-                + (" returnValue is " + returnValue));
+            console.log(">>myLogMethodDecocator intercept call of ".concat(methodNameAspropertyKey, "(").concat(params, ")")
+                + " returnValue is ".concat(returnValue));
             return returnValue;
         };
         return descriptor;
@@ -83,7 +83,7 @@ function myPerfMethodDecocator() {
             var hrTimeApres = process.hrtime();
             var apres = hrTimeApres[0] * 1000000 + hrTimeApres[1] / 1000; //Date.now();//window.performance.now();
             var params = args.map(function (arg) { return JSON.stringify(arg); }).join();
-            console.log(">>myPerfDecocator intercept call of " + methodNameAspropertyKey + ". execution time= " + (apres - avant) + " micro-secondes");
+            console.log(">>myPerfDecocator intercept call of ".concat(methodNameAspropertyKey, ". execution time= ").concat(apres - avant, " micro-secondes"));
             return returnValue;
         };
         return descriptor;
@@ -125,7 +125,7 @@ function myMinValueDecocator(minValue) {
                     value = newValue;
                 else { //console.log(`>>myMinValueDecocator: newValue=${newValue} not set for ${propertyName} !!!`)
                     //value=minValue;
-                    throw "newValue=" + newValue + " invalid for " + propertyName + " !!!";
+                    throw "newValue=".concat(newValue, " invalid for ").concat(propertyName, " !!!");
                 }
             }
         });
@@ -144,7 +144,7 @@ function myLogClassDecorator() {
             for (var _i = 0; _i < arguments.length; _i++) {
                 args[_i] = arguments[_i];
             }
-            console.log(">>> myLogClassDecorator , New: " + originalConstructor['name'] + " is created");
+            console.log(">>> myLogClassDecorator , New: ".concat(originalConstructor['name'], " is created"));
             return Reflect.construct(originalConstructor, args);
         };
         // copy prototype so intanceof operator still works
@@ -168,7 +168,14 @@ var Cercle = /** @class */ (function () {
     Cercle.prototype.description = function () {
         return "Cercle de centre (" + this.xC + "," + this.yC + ") et de rayon " + this.rayon;
     };
+    Cercle.prototype.traitementLong = function () {
+        var x = 2;
+        for (var i = 0; i < 20000; i++) {
+            x = Math.sqrt(i);
+        }
+    };
     Cercle.prototype.aire = function () {
+        this.traitementLong();
         return Math.PI * this.rayon * this.rayon;
     };
     Cercle.prototype.perimetre = function () {

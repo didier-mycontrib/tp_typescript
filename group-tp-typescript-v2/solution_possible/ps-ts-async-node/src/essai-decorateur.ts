@@ -183,9 +183,17 @@ class Cercle {
     return "Cercle de centre ("+this.xC+","+this.yC+") et de rayon " + this.rayon;
   }
 
+  traitementLong(){
+    let x=2;
+    for(let i=0; i < 20000; i++){
+      x=Math.sqrt(i);
+    }
+  }
+
   @myLogMethodDecocator()
   @myPerfMethodDecocator()
   aire() : number {
+    this.traitementLong();
     return Math.PI * this.rayon * this.rayon;
   }
 

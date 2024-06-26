@@ -11,6 +11,15 @@ var Avion = /** @class */ (function () {
     }
     return Avion;
 }());
+var Voiture = /** @class */ (function () {
+    function Voiture(marque, modele) {
+        if (marque === void 0) { marque = "?"; }
+        if (modele === void 0) { modele = "?"; }
+        this.marque = marque;
+        this.modele = modele;
+    }
+    return Voiture;
+}());
 var a1 = new Avion();
 console.log('a1=' + JSON.stringify(a1));
 //nouvelle classe AvionFlottant basée sur classe Avion et enrichie via Mixin Flottant
@@ -27,3 +36,13 @@ var a3 = new ActionFlottantWithTimestamp();
 console.log('a3=' + JSON.stringify(a3));
 a3.glisser();
 a3.logTimestamp();
+var VoitureAutonome = (0, my_mixins_1.Autonome)(Voiture);
+var va = new VoitureAutonome("peugeot", "3008");
+/*
+let va = new VoitureAutonome();
+va.marque="peugeot";
+va.modele="3008";
+*/
+va.licence = "licence xy";
+va.automatique();
+console.log('va=' + JSON.stringify(va));

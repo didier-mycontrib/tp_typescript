@@ -1,4 +1,4 @@
-import { Circle, FigVisitor, Line, Rectangle } from "./fig";
+
 
 export class ConsoleJsonVisitor  implements FigVisitor{
 
