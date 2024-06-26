@@ -1,4 +1,4 @@
-import { Constructor , Flottant , Timestamped} from './my-mixins';
+import { Autonome, Constructor , Flottant , Timestamped} from './my-mixins';
 
 console.log('essai mixin');
 
@@ -9,6 +9,12 @@ class Avion {
     }
 }
 
+class Voiture {
+    constructor(public marque:string="?",
+               public modele: string="?"){
+
+    }
+}
 
 let a1 = new Avion();
 console.log('a1='+JSON.stringify(a1));
@@ -32,4 +38,17 @@ let a3 = new ActionFlottantWithTimestamp();
 console.log('a3='+JSON.stringify(a3));
 a3.glisser();
 a3.logTimestamp();
+
+const VoitureAutonome = Autonome(Voiture);
+
+let va = new VoitureAutonome("peugeot","3008");
+/*
+let va = new VoitureAutonome();
+va.marque="peugeot";
+va.modele="3008";
+*/
+va.licence="licence xy";
+va.automatique();
+console.log('va='+JSON.stringify(va));
+
 

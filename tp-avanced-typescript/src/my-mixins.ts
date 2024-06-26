@@ -24,3 +24,13 @@ export function Timestamped<TBase extends Constructor>(Base: TBase) {
       }
     };
   }
+
+  //Mixin ajoutant la fonctionalité générique "timestamped":
+export function Autonome<TBase extends Constructor>(Base: TBase) {
+  return class extends Base {
+    licence : string ="licence gouvernementale"; //default value
+    automatique(){
+        console.log("voiture autonome qui se conduit automatiquement="+this.licence);
+    }
+  };
+}
