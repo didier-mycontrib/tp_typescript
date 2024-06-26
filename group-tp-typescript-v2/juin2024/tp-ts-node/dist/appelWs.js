@@ -25,7 +25,6 @@ async function myFetch(url) {
 async function appelWs() {
     try {
         const url = "https://catfact.ninja/fact";
-        let response;
         let catFact = await myFetch(url);
         console.log("cat_fact=" + catFact.fact);
     }

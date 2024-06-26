@@ -10,12 +10,12 @@ interface CatFact{
     length: number;
 }
 
-async function myFetch(url: string) : Promise<CatFact>{
+async function myFetch<T>(url: string) : Promise<T>{
     try{
         let response  : Response;
         response= await fetch(url);
-        let res : CatFact 
-        res = (await response.json()) as CatFact;
+        let res : T 
+        res = (await response.json()) as T;
         //res =<CatFact> (await response.json());
         return res;
     }catch(e){
@@ -27,8 +27,7 @@ async function myFetch(url: string) : Promise<CatFact>{
 async function appelWs(){
     try{
         const url ="https://catfact.ninja/fact";
-        let response  : Response;
-        let catFact = await myFetch(url);
+        let catFact = await myFetch<CatFact>(url);
         console.log("cat_fact="+ catFact.fact);
     }catch(e){
         console.log("erreur: " + e);
