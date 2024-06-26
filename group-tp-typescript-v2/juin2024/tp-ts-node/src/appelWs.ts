@@ -16,7 +16,7 @@ async function myFetch<T>(url: string) : Promise<T>{
         response= await fetch(url);
         let res : T 
         res = (await response.json()) as T;
-        //res =<CatFact> (await response.json());
+        //res =<T> (await response.json());
         return res;
     }catch(e){
         console.log("erreur: " + e);
@@ -27,7 +27,7 @@ async function myFetch<T>(url: string) : Promise<T>{
 async function appelWs(){
     try{
         const url ="https://catfact.ninja/fact";
-        let catFact = await myFetch<CatFact>(url);
+        let catFact : CatFact = await myFetch<CatFact>(url);
         console.log("cat_fact="+ catFact.fact);
     }catch(e){
         console.log("erreur: " + e);

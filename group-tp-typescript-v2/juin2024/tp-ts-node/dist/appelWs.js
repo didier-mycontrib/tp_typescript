@@ -1,20 +1,15 @@
-"use strict";
 /*
 npm install -s node-fetch
 npm i --save-dev @types/node-fetch
 */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const node_fetch_1 = __importDefault(require("node-fetch"));
+import fetch from "node-fetch";
 async function myFetch(url) {
     try {
         let response;
-        response = await (0, node_fetch_1.default)(url);
+        response = await fetch(url);
         let res;
         res = (await response.json());
-        //res =<CatFact> (await response.json());
+        //res =<T> (await response.json());
         return res;
     }
     catch (e) {

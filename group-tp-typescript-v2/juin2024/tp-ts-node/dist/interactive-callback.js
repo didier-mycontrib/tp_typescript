@@ -1,12 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.InteractiveComputer = void 0;
 //NB:  process.stdin n'est reconnu ici par typescript 
 //que si dépendance "@types/node": "^14.11.2" dans package.json
 //via npm install --save-dev  @types/node
 var stdin = process.stdin;
 var stdout = process.stdout;
-class InteractiveComputer {
+export class InteractiveComputer {
     static ask(question, callback) {
         stdin.resume();
         stdout.write(question + ": ");
@@ -28,7 +25,6 @@ class InteractiveComputer {
         });
     }
 }
-exports.InteractiveComputer = InteractiveComputer;
 //petit test:
 InteractiveComputer.ask_and_compute_x_plus_y();
 //# sourceMappingURL=interactive-callback.js.map

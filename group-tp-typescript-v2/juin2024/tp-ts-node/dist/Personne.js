@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Personne = void 0;
-class Personne {
+export class Personne {
     constructor(numero = 0, nom = "?", _age = 0) {
         this.numero = numero;
         this.nom = nom;
@@ -28,7 +25,6 @@ class Personne {
         this._age++;
     }
 }
-exports.Personne = Personne;
 Personne.ageMajorite = 18;
 //fonction interne que je n'exporte pas
 function test1() {
@@ -38,7 +34,7 @@ function test1() {
 function afficherJolimentPersonne(p) {
     console.log("*** " + JSON.stringify(p));
 }
-exports.default = {
+export default {
     name: "personnequeJaime",
     afficherJolimentPersonne: afficherJolimentPersonne
     //afficherJolimentPersonne
