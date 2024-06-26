@@ -34,4 +34,14 @@ async function appelWs(){
     }
 }
 
-appelWs();
+function appelWsV2(){
+    const url ="https://catfact.ninja/fact";
+    myFetch<CatFact>(url)
+    .then( (catFact: CatFact)=>{ 
+        console.log("cat_fact="+ catFact.fact);
+    })
+    .catch( (e) => {  console.log("erreur: " + e);});
+}
+
+//appelWs();
+appelWsV2();

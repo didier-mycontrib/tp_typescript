@@ -27,5 +27,14 @@ async function appelWs() {
         console.log("erreur: " + e);
     }
 }
-appelWs();
+function appelWsV2() {
+    const url = "https://catfact.ninja/fact";
+    myFetch(url)
+        .then((catFact) => {
+        console.log("cat_fact=" + catFact.fact);
+    })
+        .catch((e) => { console.log("erreur: " + e); });
+}
+//appelWs();
+appelWsV2();
 //# sourceMappingURL=appelWs.js.map
